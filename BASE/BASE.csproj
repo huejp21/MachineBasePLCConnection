@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54ED8428-0A55-425A-B9B4-44BE5001A60C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NTG500P</RootNamespace>
+    <AssemblyName>BASE</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ICon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cognex.DataMan.CogNamer.PC">
+      <HintPath>DLL\COGNEX\Cognex.DataMan.CogNamer.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.Discovery.PC">
+      <HintPath>DLL\COGNEX\Cognex.DataMan.SDK.Discovery.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.PC">
+      <HintPath>DLL\COGNEX\Cognex.DataMan.SDK.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.Utils.PC">
+      <HintPath>DLL\COGNEX\Cognex.DataMan.SDK.Utils.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DLL\AJIN\AXA.cs" />
+    <Compile Include="DLL\AJIN\AXC.cs" />
+    <Compile Include="DLL\AJIN\AXD.cs" />
+    <Compile Include="DLL\AJIN\AXDev.cs" />
+    <Compile Include="DLL\AJIN\AXHD.cs" />
+    <Compile Include="DLL\AJIN\AXHS.cs" />
+    <Compile Include="DLL\AJIN\AXL.cs" />
+    <Compile Include="DLL\AJIN\AXM.cs" />
+    <Compile Include="FORM\CForm.cs" />
+    <Compile Include="FORM\FormControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\FormMother.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\FormMother.Designer.cs">
+      <DependentUpon>FormMother.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\FormNavigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\FormNavigation.Designer.cs">
+      <DependentUpon>FormNavigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\FormStartUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\FormStartUp.Designer.cs">
+      <DependentUpon>FormStartUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\FormTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\FormTitle.Designer.cs">
+      <DependentUpon>FormTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Alarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Alarm.Designer.cs">
+      <DependentUpon>FormMessageBox_Alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_AlarmStop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_AlarmStop.Designer.cs">
+      <DependentUpon>FormMessageBox_AlarmStop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Msg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Msg.Designer.cs">
+      <DependentUpon>FormMessageBox_Msg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Input.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Input.Designer.cs">
+      <DependentUpon>FormMessageBox_Input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\MSGBOX\FormMessageBox_Info.Designer.cs">
+      <DependentUpon>FormMessageBox_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageAlarm.Designer.cs">
+      <DependentUpon>FormPageAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageAuto.Designer.cs">
+      <DependentUpon>FormPageAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageDataLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageDataLog.Designer.cs">
+      <DependentUpon>FormPageDataLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageDebug.Designer.cs">
+      <DependentUpon>FormPageDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageLogin.Designer.cs">
+      <DependentUpon>FormPageLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageLoginCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageLoginCreate.Designer.cs">
+      <DependentUpon>FormPageLoginCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageLoginManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageLoginManage.Designer.cs">
+      <DependentUpon>FormPageLoginManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageManual.Designer.cs">
+      <DependentUpon>FormPageManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageRecipe.Designer.cs">
+      <DependentUpon>FormPageRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageSetup.Designer.cs">
+      <DependentUpon>FormPageSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageTestCycle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\PAGE\FormPageTestCycle.Designer.cs">
+      <DependentUpon>FormPageTestCycle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormBCR_Lot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormBCR_Lot.Designer.cs">
+      <DependentUpon>FormBCR_Lot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormSelectPointType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormSelectPointType.Designer.cs">
+      <DependentUpon>FormSelectPointType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\IO\FormPLCView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\IO\FormPLCView.Designer.cs">
+      <DependentUpon>FormPLCView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\IO\FormThreadView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\IO\FormThreadView.Designer.cs">
+      <DependentUpon>FormThreadView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULE\BCR\FormBCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULE\BCR\FormBCR.Designer.cs">
+      <DependentUpon>FormBCR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormFolderCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormFolderCopy.Designer.cs">
+      <DependentUpon>FormFolderCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormFolderCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormFolderCreate.Designer.cs">
+      <DependentUpon>FormFolderCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormKeypadChar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormKeypadChar.Designer.cs">
+      <DependentUpon>FormKeypadChar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormKeypadNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\COMMON\FormKeypadNum.Designer.cs">
+      <DependentUpon>FormKeypadNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\SETUP\IO\FormIoControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\IO\FormIoControl.Designer.cs">
+      <DependentUpon>FormIoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MASTER\CMaster.cs" />
+    <Compile Include="FORM\SETUP\MOTOR\FormMotorControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\SETUP\MOTOR\FormMotorControl.Designer.cs">
+      <DependentUpon>FormMotorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MASTER\CThreadMaster.cs" />
+    <Compile Include="MODULE\BCR\ClassCognexEthernet.cs" />
+    <Compile Include="MODULE\PLC\ClassMxComponent.cs" />
+    <Compile Include="MODULE\PROBE\ClassProbe1_Comunication.cs" />
+    <Compile Include="MODULE\PROBE\ClassProbe2.cs" />
+    <Compile Include="MODULE\PROBE\ClassProbe1.cs" />
+    <Compile Include="MODULE\PROBE\ClassProbe2_Comunication.cs" />
+    <Compile Include="PROCESS\ClassThread_Init.cs" />
+    <Compile Include="PROCESS\ClassThread_LE.cs" />
+    <Compile Include="PROCESS\ClassThread_LP.cs" />
+    <Compile Include="PROCESS\ClassThread_Main.cs" />
+    <Compile Include="PROCESS\ClassThread_Stage1.cs" />
+    <Compile Include="PROCESS\ClassThread_Stage2.cs" />
+    <Compile Include="PROCESS\ClassThread_Test1.cs" />
+    <Compile Include="PROCESS\ClassThread_Test2.cs" />
+    <Compile Include="PROCESS\ClassThread_UE1.cs" />
+    <Compile Include="PROCESS\ClassThread_UE2.cs" />
+    <Compile Include="PROCESS\ClassThread_UE3.cs" />
+    <Compile Include="PROCESS\ClassThread_UE4.cs" />
+    <Compile Include="PROCESS\ClassThread_UP.cs" />
+    <Compile Include="VO\CIoVo.cs" />
+    <Compile Include="MODULE\MOTION\ClassMotionAction.cs" />
+    <Compile Include="MODULE\MOTION\ClassMotionMaster.cs" />
+    <Compile Include="MODULE\MOTION\ClassMotionControl.cs" />
+    <Compile Include="MODULE\MOTION\CMotionVo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UTIL\ClassDataMgr.cs" />
+    <Compile Include="UTIL\ClassLogMgr.cs" />
+    <Compile Include="VO\CVo.cs" />
+    <EmbeddedResource Include="FORM\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\FormMother.resx">
+      <DependentUpon>FormMother.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\FormNavigation.resx">
+      <DependentUpon>FormNavigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\FormStartUp.resx">
+      <DependentUpon>FormStartUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\FormTitle.resx">
+      <DependentUpon>FormTitle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\MSGBOX\FormMessageBox_Alarm.resx">
+      <DependentUpon>FormMessageBox_Alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\MSGBOX\FormMessageBox_AlarmStop.resx">
+      <DependentUpon>FormMessageBox_AlarmStop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\MSGBOX\FormMessageBox_Info.resx">
+      <DependentUpon>FormMessageBox_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\MSGBOX\FormMessageBox_Input.resx">
+      <DependentUpon>FormMessageBox_Input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\MSGBOX\FormMessageBox_Msg.resx">
+      <DependentUpon>FormMessageBox_Msg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageAlarm.resx">
+      <DependentUpon>FormPageAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageAuto.resx">
+      <DependentUpon>FormPageAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageDataLog.resx">
+      <DependentUpon>FormPageDataLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageDebug.resx">
+      <DependentUpon>FormPageDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageLogin.resx">
+      <DependentUpon>FormPageLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageLoginCreate.resx">
+      <DependentUpon>FormPageLoginCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageLoginManage.resx">
+      <DependentUpon>FormPageLoginManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageManual.resx">
+      <DependentUpon>FormPageManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageRecipe.resx">
+      <DependentUpon>FormPageRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageSetup.resx">
+      <DependentUpon>FormPageSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\PAGE\FormPageTestCycle.resx">
+      <DependentUpon>FormPageTestCycle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\COMMON\FormBCR_Lot.resx">
+      <DependentUpon>FormBCR_Lot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\COMMON\FormSelectPointType.resx">
+      <DependentUpon>FormSelectPointType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\IO\FormPLCView.resx">
+      <DependentUpon>FormPLCView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\IO\FormThreadView.resx">
+      <DependentUpon>FormThreadView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULE\BCR\FormBCR.resx">
+      <DependentUpon>FormBCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\COMMON\FormFolderCopy.resx">
+      <DependentUpon>FormFolderCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\COMMON\FormFolderCreate.resx">
+      <DependentUpon>FormFolderCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\COMMON\FormKeypadChar.resx">
+      <DependentUpon>FormKeypadChar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\COMMON\FormKeypadNum.resx">
+      <DependentUpon>FormKeypadNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\IO\FormIoControl.resx">
+      <DependentUpon>FormIoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\SETUP\MOTOR\FormMotorControl.resx">
+      <DependentUpon>FormMotorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ACTBOARDLib">
+      <Guid>{A306B18F-AE98-11D3-83AE-00A024BDBF2B}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ACTETHERLib">
+      <Guid>{A306B168-AE98-11D3-83AE-00A024BDBF2B}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ACTPCCOMLib">
+      <Guid>{A306B14E-AE98-11D3-83AE-00A024BDBF2B}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ACTPCUSBLib">
+      <Guid>{A306B175-AE98-11D3-83AE-00A024BDBF2B}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ActUtlTypeLib">
+      <Guid>{D217E54E-4A26-4A76-B0AB-57166B90F9AF}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FORM\EES\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HISTORY\TODO.txt" />
+    <Content Include="ICon.ico" />
+    <None Include="Resources\100p_Buzzer off.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
